@@ -1,8 +1,16 @@
 import "./App.scss";
-import { calc } from "./services/calc";
+import { ConsumptionWriter } from './components/consumptionWriter/ConsumptionWriter';
+import { Header } from './components/header/Header';
+import { Details } from './components/details/Details';
 
 function App() {
-  return <h1>`Hello! ${calc(2,10)}`</h1>;
+  return <div className="page-wrapper">
+      <Header />
+      <Details />
+      <main className="main">
+        <ConsumptionWriter />
+      </main>
+    </div>;
 }
 
 export default App;

@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.btn {
+    box-sizing: border-box;
+    border: none;
+    background-color: $l-blue;
+    color: $white;
+}
+
+.large {
+    width: 600px;
+}
+
+.medium {
+    width: 400px;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+.small {
+    width: 150px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.halfsquare {
+    border-radius: 0 0 15px 15px;
+}
+
+.regular {
+    border-radius: 10px;
+}
