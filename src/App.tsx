@@ -1,16 +1,18 @@
 import "./App.scss";
-import { ConsumptionWriter } from './components/consumptionWriter/ConsumptionWriter';
-import { Header } from './components/header/Header';
-import { Details } from './components/details/Details';
+import { ConsumptionWriter } from "./components/consumptionWriter/ConsumptionWriter";
+import { Header } from "./components/header/Header";
+import { Details } from "./components/details/Details";
 
-function App() {
-  return <div className="page-wrapper">
+const App: React.FC = () => {
+  return (
+    <div className="page-wrapper">
       <Header />
       <Details />
       <main className="main">
         <ConsumptionWriter />
       </main>
-    </div>;
-}
+    </div>
+  );
+};
 
 export default App;

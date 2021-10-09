@@ -1,36 +1,48 @@
-import React from 'react';
-import './Button.scss';
+import React from "react";
+import "./Button.scss";
 
 export enum BtnShape {
-    square = 'square',
-    regular = 'regular',
-    ellipse = 'ellispe',
-    halfsquare = 'halfsquare'
-};
+  square = "square",
+  regular = "regular",
+  ellipse = "ellispe",
+  halfsquare = "halfsquare",
+}
 
 export enum BtnSize {
-    large = 'large',
-    medium = 'medium',
-    small = 'small'
+  large = "large",
+  medium = "medium",
+  small = "small",
 }
 
 interface IButtonProps {
-    shape?: BtnShape;
-    isOutline?: boolean;
-    className?: string;
-    size?: BtnSize;
-    onClick?(args?: any): void;
-    children: JSX.Element | string;
+  shape?: BtnShape;
+  isOutline?: boolean;
+  className?: string;
+  size?: BtnSize;
+  onClick?(args?: unknown): void;
+  children: JSX.Element | string;
 }
 
 export const Button: React.FC<IButtonProps> = ({
-    children,
-    shape = BtnShape.regular,
-    isOutline = false,
-    className = '',
-    size = BtnSize.medium,
-    onClick = () => {}
+  children,
+  shape = BtnShape.regular,
+  isOutline = false,
+  className = "",
+  size = BtnSize.medium,
+  onClick = () => {},
 }: IButtonProps) => {
-    const resClassName = ['btn', shape, (isOutline ? 'outline' : ''), className, size].join(' ').trim();
-    return <button className={resClassName} onClick={onClick}>{children}</button>
+  const resClassName = [
+    "btn",
+    shape,
+    isOutline ? "outline" : "",
+    className,
+    size,
+  ]
+    .join(" ")
+    .trim();
+  return (
+    <button className={resClassName} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
