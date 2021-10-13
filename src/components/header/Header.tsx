@@ -1,12 +1,19 @@
-import "./Header.scss";
+import sumService from '../../services/sum.service';
+import React, { useEffect, useState } from 'react';
+import './Header.scss';
 
-export const Header: React.FC = () => {
+interface IHeader {
+  spent: number;
+  restSum: number;
+}
+
+export const Header: React.FC<IHeader> = ({ spent, restSum }: IHeader) => {
   return (
     <header className="header">
       <span className="header__date">Date: {new Date().toDateString()}</span>
       <div className="header__cash-content sum">
-        <span className="sum__spend">Spend: 200</span>
-        <span className="sum__balance">Balance: 900</span>
+        <span className="sum__spend">Spend: {spent}</span>
+        <span className="sum__balance">Balance: {restSum}</span>
       </div>
     </header>
   );

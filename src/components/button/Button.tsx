@@ -1,17 +1,17 @@
-import React from "react";
-import "./Button.scss";
+import React from 'react';
+import './Button.scss';
 
 export enum BtnShape {
-  square = "square",
-  regular = "regular",
-  ellipse = "ellispe",
-  halfsquare = "halfsquare",
+  square = 'square',
+  regular = 'regular',
+  ellipse = 'ellispe',
+  halfsquare = 'halfsquare',
 }
 
 export enum BtnSize {
-  large = "large",
-  medium = "medium",
-  small = "small",
+  large = 'large',
+  medium = 'medium',
+  small = 'small',
 }
 
 interface IButtonProps {
@@ -27,18 +27,18 @@ export const Button: React.FC<IButtonProps> = ({
   children,
   shape = BtnShape.regular,
   isOutline = false,
-  className = "",
+  className = '',
   size = BtnSize.medium,
   onClick = () => {},
 }: IButtonProps) => {
   const resClassName = [
-    "btn",
+    'btn',
     shape,
-    isOutline ? "outline" : "",
+    isOutline ? 'outline' : '',
     className,
     size,
   ]
-    .join(" ")
+    .join(' ')
     .trim();
   return (
     <button className={resClassName} onClick={onClick}>

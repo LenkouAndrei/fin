@@ -1,18 +1,25 @@
-import React, { useState } from "react";
-import { Button, BtnSize, BtnShape } from "../button/Button";
-import "./Details.scss";
+import React, { useState, useEffect } from 'react';
+import { Button, BtnSize, BtnShape } from '../button/Button';
+import spendingsService, { ISpending } from '../../services/spendings.service';
+import './Details.scss';
 
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const emptyList = <li className="details__list-item">
+Storage is empty
+</li>;
 
-export const Details: React.FC = () => {
+interface IDetails {
+  spendings: ISpending[];
+}
+
+export const Details: React.FC<IDetails> = ({ spendings }: IDetails) => {
   const [isOpened, setIsOpened] = useState(false);
   const toggle = () => {
     setIsOpened(!isOpened);
   };
 
-  const items = nums.map((num) => (
-    <li key={num} className="details__list-item">
-      {num}
+  const items = spendings.map(({ spendingName, amount, id }: ISpending) => (
+    <li key={id} className="details__list-item">
+      <span>{spendingName}</span> - <span>{amount}</span>
     </li>
   ));
 
@@ -21,7 +28,7 @@ export const Details: React.FC = () => {
       <div className="details">
         {isOpened && (
           <>
-            <ul className="details__list">{items}</ul>
+            <ul className="details__list">{items.length > 0 ? items : emptyList}</ul>
             <div className="details__separator"></div>
           </>
         )}

@@ -4,7 +4,6 @@ module.exports = {
       'airbnb/hooks',
       'plugin:@typescript-eslint/recommended',
       'plugin:jest/recommended',
-      'plugin:prettier/recommended'
     ],
     plugins: ['import', 'react', '@typescript-eslint', 'jest'],
     env: {
@@ -24,14 +23,5 @@ module.exports = {
       ecmaVersion: 2018,
       sourceType: 'module',
       project: './tsconfig.json',
-    },
-    rules: {
-      'linebreak-style': 'off',
-      'prettier/prettier': [
-        'error',
-        {
-          endOfLine: 'auto',
-        },
-      ],
     },
   };
