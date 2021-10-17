@@ -1,5 +1,4 @@
-import sumService from '../../services/sum.service';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Header.scss';
 
 interface IHeader {

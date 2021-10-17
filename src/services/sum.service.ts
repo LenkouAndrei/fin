@@ -10,6 +10,8 @@ class SumService {
 
   private readonly prdefinedSum: number = 1100;
 
+  private updateDate = 21;
+
   constructor() {
     const sumObj = this.getSums();
     const dayOfMonth = new Date(Date.now()).getDate();
@@ -17,7 +19,7 @@ class SumService {
       this.setSum('rest', this.prdefinedSum);
       this.setSum('spent', 0);
     }
-    if (dayOfMonth === 21) {
+    if (dayOfMonth === this.updateDate) {
       this.addSum('rest', this.prdefinedSum);
       this.setSum('spent', 0);
     }

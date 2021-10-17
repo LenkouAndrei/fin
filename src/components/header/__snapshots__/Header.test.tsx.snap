@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render Input 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <span
+      class="header__date"
+    >
+      Date: Sun Oct 17 2021
+    </span>
+    <div
+      class="header__cash-content sum"
+    >
+      <span
+        class="sum__spend"
+      >
+        Spend: 20
+      </span>
+      <span
+        class="sum__balance"
+      >
+        Balance: 15
+      </span>
+    </div>
+  </header>
+</DocumentFragment>
+`;

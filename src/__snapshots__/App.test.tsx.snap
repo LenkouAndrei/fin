@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render App 1`] = `
+<DocumentFragment>
+  <div
+    class="page-wrapper"
+  >
+    <header
+      class="header"
+    >
+      <span
+        class="header__date"
+      >
+        Date: Sun Oct 17 2021
+      </span>
+      <div
+        class="header__cash-content sum"
+      >
+        <span
+          class="sum__spend"
+        >
+          Spend: 0
+        </span>
+        <span
+          class="sum__balance"
+        >
+          Balance: 1100
+        </span>
+      </div>
+    </header>
+    <div
+      class="details-wrapper"
+    >
+      <div
+        class="details"
+      >
+        <button
+          class="btn halfsquare  details__toggler small"
+        >
+          Show Details
+        </button>
+      </div>
+    </div>
+    <main
+      class="main"
+    >
+      <ul
+        class="list w-400 h-center"
+      >
+        <li
+          class="list-item"
+        >
+          <input
+            class="ipt"
+            placeholder="How much"
+            type="text"
+            value=""
+          />
+        </li>
+        <li
+          class="list-item"
+        >
+          <input
+            class="ipt"
+            placeholder="What for"
+            type="text"
+            value=""
+          />
+        </li>
+        <li
+          class="list-item"
+        >
+          <button
+            class="btn regular   medium"
+          >
+            Submit
+          </button>
+        </li>
+      </ul>
+    </main>
+  </div>
+</DocumentFragment>
+`;

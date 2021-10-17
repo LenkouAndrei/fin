@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should render Input 1`] = `
+<DocumentFragment>
+  <input
+    class="ipt"
+    placeholder="type info"
+    type="text"
+    value="Test"
+  />
+</DocumentFragment>
+`;

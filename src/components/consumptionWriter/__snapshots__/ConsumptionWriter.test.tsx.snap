@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConsumptionWriter /> should render ConsumptionWriter 1`] = `
+<DocumentFragment>
+  <ul
+    class="list w-400 h-center"
+  >
+    <li
+      class="list-item"
+    >
+      <input
+        class="ipt"
+        placeholder="How much"
+        type="text"
+        value=""
+      />
+    </li>
+    <li
+      class="list-item"
+    >
+      <input
+        class="ipt"
+        placeholder="What for"
+        type="text"
+        value=""
+      />
+    </li>
+    <li
+      class="list-item"
+    >
+      <button
+        class="btn regular   medium"
+      >
+        Submit
+      </button>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

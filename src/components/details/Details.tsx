@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, BtnSize, BtnShape } from '../button/Button';
-import spendingsService, { ISpending } from '../../services/spendings.service';
+import { ISpending } from '../../services/spendings.service';
 import './Details.scss';
 
-const emptyList = <li className="details__list-item">
+const emptyList = <li className="details__list-item--empty">
 Storage is empty
 </li>;
 

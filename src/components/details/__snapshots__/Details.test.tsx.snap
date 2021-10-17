@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Details /> should render Details 1`] = `
+<DocumentFragment>
+  <div
+    class="details-wrapper"
+  >
+    <div
+      class="details"
+    >
+      <button
+        class="btn halfsquare  details__toggler small"
+      >
+        Show Details
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
