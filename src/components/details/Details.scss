@@ -1,36 +1,36 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables';
 
 .details {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  width: 100%;
+
+  &-wrapper {
+    position: relative;
+  }
+
+  &__list {
+    padding: 15px 0;
     display: flex;
     flex-flow: column;
-    position: absolute;
-    width: 100%;
+    align-items: center;
+    background-color: lighten($d-green, 30);
 
-    &-wrapper {
-        position: relative;
+    &-item {
+      width: 800px;
+      font-size: 1.6rem;
+      color: $white;
+      font-weight: 500;
     }
+  }
 
-    &__list {
-        padding: 15px 0;
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        background-color: lighten($d-green, 30);
+  &__separator {
+    height: 3px;
+    background: $d-hakki;
+  }
 
-        &-item {
-            width: 800px;
-            font-size: 1.6rem;
-            color: $white;
-            font-weight: 500;
-        }
-    }
-
-    &__separator {
-        height: 3px;
-        background: $d-hakki;
-    }
-
-    &__toggler {
-        align-self: center;
-    }
+  &__toggler {
+    align-self: center;
+  }
 }

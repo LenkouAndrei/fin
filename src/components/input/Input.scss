@@ -1,12 +1,12 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables';
 
 .ipt {
-    font-size: 1.8rem;
-    color: $graphit;
-    line-height: 3rem;
-    border-radius: 10px;
-    border: none;
-    width: 400px;
-    box-sizing: border-box;
-    padding-left: 15px;
+  font-size: 1.8rem;
+  color: $graphit;
+  line-height: 3rem;
+  border-radius: 10px;
+  border-width: 0;
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 15px;
 }

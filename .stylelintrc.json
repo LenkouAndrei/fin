@@ -1,0 +1,15 @@
+{
+    "extends": "stylelint-config-sass-guidelines",
+    "plugins": [
+        "stylelint-scss"
+    ],
+    "rules": {
+        "color-no-invalid-hex": true,
+        "color-hex-case": "upper",
+        "order/properties-alphabetical-order": null,
+        "max-nesting-depth": [4],
+        "selector-class-pattern": null,
+        "property-no-unknown": null,
+        "selector-max-compound-selectors": null
+    }
+}
