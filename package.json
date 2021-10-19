@@ -2,6 +2,7 @@
   "name": "fin",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
@@ -10,6 +11,7 @@
     "@types/node": "16.10.3",
     "@types/react": "17.0.27",
     "@types/react-dom": "17.0.9",
+    "express": "4.17.1",
     "node-sass": "6.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -24,7 +26,11 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "lint:fix": "tsc --noEmit && eslint --fix src/**/*.ts{,x}"
+    "lint:fix": "tsc --noEmit && eslint --fix src/**/*.ts{,x}",
+    "cypress-open": "./node_modules/.bin/cypress open",
+    "cypress-local": "\"npm run start\" \"npm run cypress-open\"",
+    "cypress-run": "./node_modules/.bin/cypress run",
+    "cypress-ci": "start-server-and-test \"npm run start\" http://localhost:3000 \"npm run cypress-run\""
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +53,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
+    "cypress": "8.6.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-airbnb-typescript": "14.0.1",
     "eslint-config-prettier": "8.3.0",
