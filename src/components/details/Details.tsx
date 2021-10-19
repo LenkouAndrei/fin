@@ -3,9 +3,9 @@ import { Button, BtnSize, BtnShape } from '../button/Button';
 import { ISpending } from '../../services/spendings.service';
 import './Details.scss';
 
-const emptyList = <li className="details__list-item--empty">
-Storage is empty
-</li>;
+const emptyList = (
+  <li className="details__list-item--empty">Storage is empty</li>
+);
 
 interface IDetails {
   spendings: ISpending[];
@@ -28,7 +28,9 @@ export const Details: React.FC<IDetails> = ({ spendings }: IDetails) => {
       <div className="details">
         {isOpened && (
           <>
-            <ul className="details__list">{items.length > 0 ? items : emptyList}</ul>
+            <ul className="details__list">
+              {items.length > 0 ? items : emptyList}
+            </ul>
             <div className="details__separator"></div>
           </>
         )}

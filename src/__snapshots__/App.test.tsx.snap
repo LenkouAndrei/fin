@@ -11,7 +11,7 @@ exports[`App should render App 1`] = `
       <span
         class="header__date"
       >
-        Date: Sun Oct 17 2021
+        Date: Tue Oct 19 2021
       </span>
       <div
         class="header__cash-content sum"

@@ -3,8 +3,8 @@ import { Button, BtnShape, BtnSize } from './Button';
 
 describe('<Button />', () => {
   it('should render Button', () => {
-      const { asFragment } = render(<Button>Hello</Button>);
-      expect(asFragment()).toMatchSnapshot();
+    const { asFragment } = render(<Button>Hello</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call passed callback on click', () => {
@@ -20,13 +20,21 @@ describe('<Button />', () => {
       shape: BtnShape.ellipse,
       size: BtnSize.small,
     };
-    render(<Button
-      shape={passedClasses.shape}
-      size={passedClasses.size}
-      isOutline={true}>Hello</Button>);
+    render(
+      <Button
+        shape={passedClasses.shape}
+        size={passedClasses.size}
+        isOutline={true}
+      >
+        Hello
+      </Button>
+    );
     const btnEl = screen.getByText('Hello');
-    const isEveryInClass = ['outline', passedClasses.shape, passedClasses.size]
-      .every(item => btnEl.classList.contains(item));
+    const isEveryInClass = [
+      'outline',
+      passedClasses.shape,
+      passedClasses.size,
+    ].every((item) => btnEl.classList.contains(item));
     expect(isEveryInClass).toBeTruthy();
   });
 });

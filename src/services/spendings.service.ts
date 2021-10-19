@@ -1,5 +1,5 @@
 import storageWrapperService from './storageWrapper.service';
-  
+
 export interface ISpending {
   id: string;
   spendingName: string;
@@ -7,11 +7,11 @@ export interface ISpending {
 }
 
 class SpendingsService {
-  private readonly fieldName: string = 'spendings';
+  public readonly fieldName: string = 'spendings';
 
   public getAllSpendings = (): ISpending[] => {
     const allSpendingJSON =
-            storageWrapperService.getItem(this.fieldName) || JSON.stringify([]);
+      storageWrapperService.getItem(this.fieldName) || JSON.stringify([]);
     return JSON.parse(allSpendingJSON);
   };
 
@@ -22,9 +22,14 @@ class SpendingsService {
 
   public updateSpending = (spending: ISpending): void => {
     const spendings = this.getAllSpendings();
-    const updatedIdx = spendings.findIndex(({ id }: ISpending) => id === spending.id);
-    const newSpendings =
-            [...spendings.slice(0, updatedIdx), spending, ...spendings.slice(updatedIdx + 1)];
+    const updatedIdx = spendings.findIndex(
+      ({ id }: ISpending) => id === spending.id
+    );
+    const newSpendings = [
+      ...spendings.slice(0, updatedIdx),
+      spending,
+      ...spendings.slice(updatedIdx + 1),
+    ];
     storageWrapperService.addItem<ISpending[]>(this.fieldName, newSpendings);
   };
 
@@ -36,9 +41,13 @@ class SpendingsService {
 
   public deleteSpending = (outerId: string): void => {
     const spendings = this.getAllSpendings();
-    const updatedIdx = spendings.findIndex(({ id }: ISpending) => id === outerId);
-    const newSpendings =
-            [...spendings.slice(0, updatedIdx), ...spendings.slice(updatedIdx + 1)];
+    const updatedIdx = spendings.findIndex(
+      ({ id }: ISpending) => id === outerId
+    );
+    const newSpendings = [
+      ...spendings.slice(0, updatedIdx),
+      ...spendings.slice(updatedIdx + 1),
+    ];
     storageWrapperService.addItem<ISpending[]>(this.fieldName, newSpendings);
   };
 

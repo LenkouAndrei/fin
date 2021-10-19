@@ -6,7 +6,7 @@ interface ISum {
 }
 
 class SumService {
-  private readonly fieldName: string = 'sum';
+  public readonly fieldName: string = 'sum';
 
   private readonly prdefinedSum: number = 1100;
 
@@ -27,7 +27,7 @@ class SumService {
 
   public getSums = (): ISum => {
     const allSpendingJSON =
-            storageWrapperService.getItem(this.fieldName) || JSON.stringify({});
+      storageWrapperService.getItem(this.fieldName) || JSON.stringify({});
     return JSON.parse(allSpendingJSON);
   };
 

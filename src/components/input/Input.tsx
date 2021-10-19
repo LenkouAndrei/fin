@@ -5,7 +5,7 @@ interface IInputProps {
   children?: string | number;
   type?: string;
   placeholder?: string;
-  onChange?(args?: unknown): void
+  onChange?(args?: unknown): void;
 }
 
 export const Input: React.FC<IInputProps> = ({
@@ -14,5 +14,13 @@ export const Input: React.FC<IInputProps> = ({
   type = 'text',
   placeholder = 'type info',
 }: IInputProps) => {
-  return <input onChange={onChange} className="ipt" type={type} placeholder={placeholder} value={children} />;
+  return (
+    <input
+      onChange={onChange}
+      className="ipt"
+      type={type}
+      placeholder={placeholder}
+      value={children}
+    />
+  );
 };

@@ -12,7 +12,9 @@ interface IConsumptionWriter {
   updateData(): void;
 }
 
-export const ConsumptionWriter: React.FC<IConsumptionWriter> = ({ updateData }: IConsumptionWriter) => {
+export const ConsumptionWriter: React.FC<IConsumptionWriter> = ({
+  updateData,
+}: IConsumptionWriter) => {
   const [category, setCategory] = useState(DEFAULT_CATEGORY);
   const [cost, setCost] = useState<number | string>(DEFAULT_COST);
 
@@ -39,10 +41,14 @@ export const ConsumptionWriter: React.FC<IConsumptionWriter> = ({ updateData }: 
   return (
     <ul className="list w-400 h-center">
       <li className="list-item">
-        <Input onChange={costChanged} placeholder="How much">{cost}</ Input>
+        <Input onChange={costChanged} placeholder="How much">
+          {cost}
+        </Input>
       </li>
       <li className="list-item">
-        <Input onChange={categoryChanged} placeholder="What for">{category}</ Input>
+        <Input onChange={categoryChanged} placeholder="What for">
+          {category}
+        </Input>
       </li>
       <li className="list-item">
         <Button onClick={submit}>Submit</Button>

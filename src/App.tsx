@@ -18,15 +18,15 @@ const App: React.FC = () => {
     setSpentMoney(spent);
     setRestMoney(rest);
   };
-  
+
   useEffect(() => {
     updateData();
   }, []);
 
   return (
     <div className="page-wrapper">
-      <Header spent={spentMoney} restSum={restMoney}/>
-      <Details spendings={spendings}/>
+      <Header spent={spentMoney} restSum={restMoney} />
+      <Details spendings={spendings} />
       <main className="main">
         <ConsumptionWriter updateData={updateData} />
       </main>

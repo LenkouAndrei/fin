@@ -8,18 +8,18 @@ const mockSpendings = [
 
 describe('<Details />', () => {
   it('should render Details', () => {
-      const { asFragment } = render(<Details spendings={mockSpendings}/>);
-      expect(asFragment()).toMatchSnapshot();
+    const { asFragment } = render(<Details spendings={mockSpendings} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should contain toggle button', async() => {
-    render(<Details spendings={[]}/>);
+  it('should contain toggle button', async () => {
+    render(<Details spendings={[]} />);
     const toggleBtn = screen.getByText('Show Details');
     expect(toggleBtn).toBeTruthy();
   });
 
-  it('should show details on toggleBtn click', async() => {
-    const { container } = render(<Details spendings={[]}/>);
+  it('should show details on toggleBtn click', async () => {
+    const { container } = render(<Details spendings={[]} />);
     const toggleBtn = screen.getByText('Show Details');
     toggleBtn.click();
     await waitFor(() => {
@@ -27,8 +27,8 @@ describe('<Details />', () => {
     });
   });
 
-  it('should hide details on toggleBtn click', async() => {
-    const { container } = render(<Details spendings={[]}/>);
+  it('should hide details on toggleBtn click', async () => {
+    const { container } = render(<Details spendings={[]} />);
     const toggleBtn = screen.getByText('Show Details');
     toggleBtn.click();
     toggleBtn.click();
@@ -37,17 +37,19 @@ describe('<Details />', () => {
     });
   });
 
-  it('should show empty detail on toggleBtn click if spendings are absent', async() => {
-    const { container } = render(<Details spendings={[]}/>);
+  it('should show empty detail on toggleBtn click if spendings are absent', async () => {
+    const { container } = render(<Details spendings={[]} />);
     const toggleBtn = screen.getByText('Show Details');
     toggleBtn.click();
     await waitFor(() => {
-      expect(container.querySelector('.details__list-item--empty')).toBeTruthy();
+      expect(
+        container.querySelector('.details__list-item--empty')
+      ).toBeTruthy();
     });
   });
 
-  it('should show details on toggleBtn click if spendings are present', async() => {
-    const { container } = render(<Details spendings={mockSpendings}/>);
+  it('should show details on toggleBtn click if spendings are present', async () => {
+    const { container } = render(<Details spendings={mockSpendings} />);
     const toggleBtn = screen.getByText('Show Details');
     toggleBtn.click();
     await waitFor(() => {
